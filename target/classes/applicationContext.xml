@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <!--在之前的操作中我们都是使用bean标签的方式向IOC容器中注册bean，下面使用注解的方式
     junit
-    当使用
+    当使用注解的时候，可以再当前类的上面添加某些注解标识
+    @Component 组件，理论上可以再人已的类上进行添加，再扫描的时候都会完成@bean的注册
+    @Controller 放置在控制层，用来接收用户的请求
+    @Service 放置在业务逻辑层
+    @Repository 放置在数据访问层
 
+    这四个注解标识写在类上面的时候都可以完成注册bean的功能
+    但是这些规定并不是spring识别的标识，在spring程序运行过程中，不会对这四个注解做任何区分，看起来是一样的
+    都会完成bean的注册功能
+    在实际的开发过程中，最好能分清楚，提高代码的可读性
+    所以，最偷懒的方式是，给所有需要注册的bean类上添加@component注解
+
+    在使用注解的时候，还需要告诉spring应该从哪个包开始扫描
+    需要导入context命名空间
+
+    在使用注解的使用，没有定义id和class，那么如何根据id来进行识别
+    是吧当前类的名称的首字母小写之后，做识别的
+    如果需要改名称，那么需要在注解添加参数值value来完成修改名字的目的
     -->
-    <bean id="personController" class="com.mashibing.controller.PersonController"></bean>
+    <!--<bean id="personController" class="com.mashibing.controller.PersonController"></bean>-->
 
 
+    <context:component-scan base-package="com.mashibing"></context:component-scan>
 </beans>
