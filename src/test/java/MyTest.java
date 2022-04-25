@@ -14,10 +14,12 @@ public class MyTest {
     public void test01(){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         PersonController personController = context.getBean("personController", PersonController.class);
-        PersonController personController02 = context.getBean("personController", PersonController.class);
+//        PersonController personController02 = context.getBean("personController", PersonController.class);
         System.out.println(personController);
-        System.out.println(personController02==personController);//单例的@Scope(value = "singleton")，多例@Scope(value = "prototype")
-        PersonService personService = context.getBean("personService", PersonService.class);
-        System.out.println(personService);
+//        System.out.println(personController02==personController);//单例的@Scope(value = "singleton")，多例@Scope(value = "prototype")
+//        PersonService personService = context.getBean("personService", PersonService.class);
+//        System.out.println(personService);
+
+
     }
 }
