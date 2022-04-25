@@ -13,12 +13,15 @@ public class PersonController {
      * 通过@AutoWired注解能够完成自动注入的功能
      *      是按照什么方式进行自动注入的呢？
      *
-     * 默认情况是按照类型byType来进行装配的
+     *      默认情况是按照类型byType来进行装配的
+     *      如果找到直接赋值，找不到直接报错
+     *      如果有多个类型一样的bean类对象，此时会按照id来进行查找，默认的id是类名的首字母小写
+     *      如果找到直接注入，找不到直接报错
      */
     @Autowired
-    private PersonService personService;
+    private PersonService personService2;
 
     public void save(){
-        personService.save();
+        personService2.save();
     }
 }
