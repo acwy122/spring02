@@ -46,6 +46,8 @@
         <!--custom：使用自定义的方式，可以自己定义自己的筛选规则，一般不用-->
         <!--<context:include-filter type="assignable" expression="com.mashibing.controller.PersonController"></context:include-filter>-->
         <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:include-filter>-->
-        <context:exclude-filter type="assignable" expression="com.mashibing.controller.PersonController"></context:exclude-filter>
+        <!--<context:exclude-filter type="assignable" expression="com.mashibing.controller.PersonController"></context:exclude-filter>-->
     </context:component-scan>
+
+    <bean id="personController" class="com.mashibing.controller.PersonController"></bean>
 </beans>
