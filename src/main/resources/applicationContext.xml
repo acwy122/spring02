@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--在之前的操作中我们都是使用bean标签的方式向IOC容器中注册bean，下面使用注解的方式
+    junit
+    当使用注解的时候，可以再当前类的上面添加某些注解标识
+    @Component 组件，理论上可以再人已的类上进行添加，再扫描的时候都会完成@bean的注册
+    @Controller 放置在控制层，用来接收用户的请求
+    @Service 放置在业务逻辑层
+    @Repository 放置在数据访问层
+
+    这四个注解标识写在类上面的时候都可以完成注册bean的功能
+    但是这些规定并不是spring识别的标识，在spring程序运行过程中，不会对这四个注解做任何区分，看起来是一样的
+    都会完成bean的注册功能
+    在实际的开发过程中，最好能分清楚，提高代码的可读性
+
+    
+    -->
+    <bean id="personController" class="com.mashibing.controller.PersonController"></bean>
+
+
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--在之前的操作中我们都是使用bean标签的方式向IOC容器中注册bean，下面使用注解的方式
+    junit
+    当使用
+
+    -->
+    <bean id="personController" class="com.mashibing.controller.PersonController"></bean>
+
+
+</beans>
