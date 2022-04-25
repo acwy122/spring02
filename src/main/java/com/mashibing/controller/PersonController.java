@@ -16,7 +16,7 @@ public class PersonController {
      * 默认情况是按照类型byType来进行装配的
      */
     @Autowired
-    private PersonService2 personService;
+    private PersonService personService;
 
     public void save(){
         personService.save();
