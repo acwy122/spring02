@@ -1,4 +1,4 @@
 package com.mashibing.controller;
 
-public class PersonController {
+public class TeacherController {
 }

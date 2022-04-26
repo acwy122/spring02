@@ -1,5 +1,6 @@
-import com.mashibing.controller.PersonController;
-import com.mashibing.service.PersonService;
+import com.mashibing.controller.BaseController;
+import com.mashibing.dao.BaseDao;
+import com.mashibing.dao.TeacherDao;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,12 +10,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 测试的方法不可以有参数，不可以有返回值
  */
 public class MyTest {
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
     @Test
     public void test01(){
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        PersonController personController = context.getBean("personController", PersonController.class);
-        personController.save();
+//        PersonController personController = context.getBean("personController", PersonController.class);
+//        personController.save();
 
 //        PersonController personController02 = context.getBean("personController", PersonController.class);
 //        System.out.println(personController);
@@ -23,5 +24,11 @@ public class MyTest {
 //        System.out.println(personService);
 
 
+    }
+
+    @Test
+    public void test02(){
+        BaseController baseController = context.getBean("baseController", BaseController.class);
+        baseController.save();
     }
 }
